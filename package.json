@@ -1,0 +1,36 @@
+{
+  "name": "wxfe",
+  "version": "1.0.0",
+  "description": "wxfe-cli",
+  "main": "index.js",
+  "bin": {
+    "wxfe": "./bin/run"
+  },
+  "scripts": {
+    "dev": "npm run watch-server",
+    "watch-server": "nodemon --watch 'src/**/*' --exec babel-node ./src/index.js",
+    "build": "babel src --out-dir lib --ignore 'src/views/**' && npm run view",
+    "view": "cp -r src/views lib/views"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "commander": "^5.1.0",
+    "didyoumean": "^1.2.1",
+    "json5": "^2.1.3",
+    "koa": "^2.11.0",
+    "koa-static": "^5.0.0",
+    "koa-view": "^2.1.3",
+    "nodemon": "^2.0.4"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6"
+  }
+}
